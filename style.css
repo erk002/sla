@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #ff0000, #ff00ff, #00ffff, #ffff00);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+    font-family: 'Arial Black', 'Helvetica', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.88);
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 6px solid #fff;
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.9);
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px #ff00ff,
+                 0 0 40px #00ffff;
+    animation: pisca 0.8s infinite alternate;
+    line-height: 1.1;
+}
+
+@keyframes pisca {
+    from { opacity: 0.75; }
+    to { opacity: 1; }
+}
+
+p {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+#nomeInput {
+    font-size: 1.6rem;
+    padding: 15px 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    border: none;
+    margin-bottom: 25px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+}
+
+button {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: #ff0000;
+    color: white;
+    border: 5px solid #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 25px #ff0000;
+    margin: 10px 0;
+}
+
+button:active {
+    transform: scale(0.95);
+    background: #ffff00;
+    color: #ff0000;
+    box-shadow: 0 0 40px #ffff00;
+}
+
+.nome {
+    font-size: 2.6rem;
+    margin: 35px 0 20px 0;
+    color: #ffff00;
+    text-shadow: 0 0 25px #ffff00;
+    min-height: 90px;
+    word-break: break-word;
+}
+
+.mensagem {
+    margin-top: 20px;
+    font-size: 1.7rem;
+    min-height: 70px;
+    text-shadow: 0 0 15px #00ff00;
+    line-height: 1.3;
+}
+
+.viado {
+    animation: shake 0.4s infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+/* Confetes */
+.confete {
+    position: absolute;
+    font-size: 1.8rem;
+    animation: cair 4s linear forwards;
+    z-index: 10;
+    pointer-events: none;
+}
+
+@keyframes cair {
+    0% { 
+        transform: translateY(-150px) rotate(0deg); 
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(120vh) rotate(720deg); 
+        opacity: 0;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    .nome {
+        font-size: 2.2rem;
+    }
+    button {
+        font-size: 1.6rem;
+        padding: 16px;
+    }
+}
